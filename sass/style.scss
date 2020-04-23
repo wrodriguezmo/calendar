@@ -1,0 +1,82 @@
+.container {
+    width: 90%;
+    margin: 5%;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+#calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .month {
+        flex: 0 1 21%;
+        margin-bottom: 3em;
+        &::before {
+            content: "ENERO";
+            display: block;
+            font-weight: bold;
+        }
+        &:nth-child(2)::before {
+            content: "FEBRERO";
+        }
+        ul {
+            padding: 8px 0;
+            display: flex;
+            &:first-child {
+                margin-bottom: 25px;
+                border-bottom: 3px solid #820101a8;
+            }
+            li {
+                list-style-type: none;
+                //border: 1px solid black;
+                flex: 1 1 0;
+                &.holiday {
+                    color: white;
+                    font-weight: bold;
+                    &::after {
+                        content: '';
+                        width: 60px;
+                        display: block;
+                        height: 60px;
+                        background: #7c0303;
+                        position: relative;
+                        left: 28px;
+                        top: -44px;
+                        z-index: -1;
+                        border-radius: 33px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1920px) {
+    #calendar {
+        font-size: 25px;
+        .month {
+            flex-basis: 30%;
+        }
+    }
+}
+
+@media screen and (max-width:1280px) {
+    #calendar {
+        font-size: 22px;
+        .month {
+            flex-basis: 47%;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #calendar {
+        font-size: 20px;
+        .month {
+            flex-basis: 100%;
+        }
+    }
+}
