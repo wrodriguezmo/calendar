@@ -35,19 +35,9 @@
                 flex: 1 1 0;
                 &.holiday {
                     color: white;
+                    border-radius: 35px 0px;
                     font-weight: bold;
-                    &::after {
-                        content: '';
-                        width: 60px;
-                        display: block;
-                        height: 60px;
-                        background: #7c0303;
-                        position: relative;
-                        left: 28px;
-                        top: -44px;
-                        z-index: -1;
-                        border-radius: 33px;
-                    }
+                    background-color: #7c0303;
                 }
             }
         }
