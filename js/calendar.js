@@ -4,6 +4,7 @@ var equinoccio = new Date("03/19/2020"); // TO DO fx() //pendiente
 var accum = true, fullmoon = new Date("01/10/2020"); // acumalado .5
 
 
+
 calculateCalendar = () => {
     daysArray[1] = es_bisiesto(year)?29:28;
     var months = [];
@@ -18,7 +19,49 @@ calculateCalendar = () => {
     sundayEaster = setSunday(fullMoonEaster);
 
     months = setHolidays(months, sundayEaster)
-    console.log(months)
+
+    // generate DOM from array months
+    var calendar = document.getElementById("calendar");
+
+    // Days of the week
+    let weekNames = document.createElement("ul");
+    let dayNames = ["Lu", "Ma", "Mi", "Ju", "Vi", "Sá", "Do"]
+    for(name of dayNames){
+        let dayName = document.createElement("li")
+        dayName.innerHTML = name
+        weekNames.appendChild(dayName)
+    }
+
+    for(monthI in months){
+        let monthD = document.createElement("div");
+        monthD.classList.add("month")
+        monthD.appendChild(weekNames.cloneNode(true))
+        calendar.appendChild(monthD)
+        
+        let day = new Date(`${parseInt(monthI)+1}/01/${year}`)
+
+        let ul = document.createElement("ul");
+        var firstDay = day.getDay();
+        if(!firstDay)firstDay = 6
+        for(var i=0; i<firstDay-1; i++)
+            ul.appendChild(document.createElement("li"));
+
+        for(dayI in months[monthI]){
+            let li = document.createElement("li");
+            li.innerHTML = parseInt(dayI)+1;
+            if(months[monthI][dayI])
+                li.classList.add("holiday")
+            ul.appendChild(li)
+            if(new Date(`${parseInt(monthI)+1}/${parseInt(dayI)+1}/${year}`).getDay()==0){
+                monthD.appendChild(ul.cloneNode(true))
+                ul = document.createElement("ul");
+            }
+        }
+        while(ul.childElementCount<7)
+            ul.appendChild(document.createElement("li"));
+        monthD.appendChild(ul);
+    }
+
 }
 
 calculateCalendar();
