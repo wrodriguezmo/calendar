@@ -39,7 +39,7 @@ setHolidays = (months, sunday) => {
     
     let easter = [-3, -2, 43, 64, 71];
     for(e of easter){
-        let tmp = new Date((new Date(sunday)).setDate(sunday.getDate()-3));
+        let tmp = new Date((new Date(sunday)).setDate(sunday.getDate()+e));
         months = setHoliday(tmp,months);
     }
 

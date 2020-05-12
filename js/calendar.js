@@ -71,7 +71,9 @@ calculateCalendar();
 /*
  TO DO GENERALES
  
+ * Select año
+ * Comprobar distintos años
  * Comprobar distintas zonas horarias
-
+ 
 
 */

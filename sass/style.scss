@@ -22,6 +22,36 @@
         &:nth-child(2)::before {
             content: "FEBRERO";
         }
+        &:nth-child(3)::before {
+            content: "MARZO";
+        }
+        &:nth-child(4)::before {
+            content: "ABRIL";
+        }
+        &:nth-child(5)::before {
+            content: "MAYO";
+        }
+        &:nth-child(6)::before {
+            content: "JUNIO";
+        }
+        &:nth-child(7)::before {
+            content: "JULIO";
+        }
+        &:nth-child(8)::before {
+            content: "AGOSTO";
+        }
+        &:nth-child(9)::before {
+            content: "SEPTIEMBRE";
+        }
+        &:nth-child(10)::before {
+            content: "OCTUBRE";
+        }
+        &:nth-child(11)::before {
+            content: "NOVIEMBRE";
+        }
+        &:nth-child(12)::before {
+            content: "DICIEMBRE";
+        }
         ul {
             padding: 8px 0;
             display: flex;
