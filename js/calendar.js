@@ -62,6 +62,13 @@ calculateCalendar = () => {
         monthD.appendChild(ul);
     }
 
+    var selectYear = document.getElementsByName("year")[0];
+    for(let i=2020;i<2101;i++){
+        let option = document.createElement("option")
+        option.innerHTML = i
+        selectYear.appendChild(option)
+    }
+
 }
 
 calculateCalendar();

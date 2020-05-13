@@ -1,10 +1,20 @@
 .container {
     width: 90%;
-    margin: 5%;
+    margin: 2% 5%;
     float: left;
     text-align: center;
     font-size: 30px;
     font-family: 'Varela Round', sans-serif;
+}
+
+#year {
+    margin-bottom: 2em;
+
+    select {
+        font-size: 60px;
+        width: 300px;
+        padding-left: 60px;
+    }
 }
 
 #calendar {
