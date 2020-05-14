@@ -1,6 +1,6 @@
-var month, year="2020", daysArray = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+var month, year="2026", daysArray = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-var equinoccio = new Date("03/19/2020"); // TO DO fx() //pendiente
+var equinoccio = new Date(`03/19/${year}`); // TO DO fx() //pendiente
 var accum = true, fullmoon = new Date("01/10/2020"); // acumalado .5
 
 
@@ -20,10 +20,9 @@ calculateCalendar = () => {
 
     months = setHolidays(months, sundayEaster)
 
-    // generate DOM from array months
+    
     var calendar = document.getElementById("calendar");
 
-    // Days of the week
     let weekNames = document.createElement("ul");
     let dayNames = ["Lu", "Ma", "Mi", "Ju", "Vi", "Sá", "Do"]
     for(name of dayNames){
@@ -68,6 +67,17 @@ calculateCalendar = () => {
         option.innerHTML = i
         selectYear.appendChild(option)
     }
+    
+    var moreYears = document.getElementById("more-years").children[1];
+    let rangeYear = parseInt(year)
+    if(rangeYear<2023)rangeYear=2023
+    for(let i=rangeYear-3;i<rangeYear+4;i++){
+        let anotherYear = document.createElement("a")
+        anotherYear.innerHTML = i
+        anotherYear.href = `?year=${i}`
+        moreYears.appendChild(anotherYear)
+    }
+    
 
 }
 
