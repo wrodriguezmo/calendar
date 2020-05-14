@@ -1,4 +1,9 @@
-var month, year="2026", daysArray = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let search = window.location.search.substring(6)
+var year = new Date().getFullYear();
+if(search)year = window.location.search.substring(6)
+
+console.log(year)
+var month, daysArray = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 var equinoccio = new Date(`03/19/${year}`); // TO DO fx() //pendiente
 var accum = true, fullmoon = new Date("01/10/2020"); // acumalado .5
@@ -65,6 +70,7 @@ calculateCalendar = () => {
     for(let i=2020;i<2101;i++){
         let option = document.createElement("option")
         option.innerHTML = i
+        if(i==year)option.selected = "true"
         selectYear.appendChild(option)
     }
     
