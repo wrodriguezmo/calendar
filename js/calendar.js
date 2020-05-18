@@ -80,6 +80,7 @@ calculateCalendar = () => {
     for(let i=rangeYear-3;i<rangeYear+4;i++){
         let anotherYear = document.createElement("a")
         anotherYear.innerHTML = i
+        anotherYear.rel = i>rangeYear?"next":"prev";
         anotherYear.href = `?year=${i}`
         moreYears.appendChild(anotherYear)
     }
