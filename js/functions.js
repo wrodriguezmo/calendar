@@ -54,5 +54,4 @@ goToYear = () => {
     let year = document.getElementById("year").children[1].value;
     console.log("Year: ", year)
     window.location.replace(`?year=${year}`);
-    
 }
