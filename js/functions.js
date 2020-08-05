@@ -3,7 +3,7 @@ es_bisiesto = (year) => {
   return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 };
 
-function domingo(year) {
+function getSundayEaster(year) {
   const a = year % 19;
   const b = Math.floor(year / 100);
   const c = year % 100;

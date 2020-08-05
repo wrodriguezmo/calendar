@@ -17,7 +17,7 @@ calculateCalendar = () => {
     }
   }
 
-  sundayEaster = domingo(year);
+  sundayEaster = getSundayEaster(year);
 
   months = setHolidays(months, sundayEaster);
 
